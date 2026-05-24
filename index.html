@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow - Hyderabad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        
+        .top-header {
+            background: #fff;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .header-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+        }
+        
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex: 1;
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #000;
+            white-space: nowrap;
+        }
+        
+        .logo span {
+            color: #c02c39;
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 8px 12px;
+            width: 100%;
+            max-width: 550px;
+            background: #fff;
+        }
+        
+        .search-box svg {
+            width: 14px;
+            height: 14px;
+            margin-right: 8px;
+            fill: #777;
+        }
+        
+        .search-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .search-box input::placeholder {
+            color: #999;
+        }
+        
+        .right-section {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .city-dropdown {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+        }
+        
+        .city-dropdown svg {
+            width: 10px;
+            height: 10px;
+            fill: #333;
+        }
+        
+        .sign-in-btn {
+            background: #f84464;
+            color: #fff;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        
+        .second-nav {
+            background: #fff;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .nav-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 24px;
+        }
+        
+        .nav-left, .nav-right {
+            display: flex;
+            gap: 18px;
+        }
+        
+        .nav-left a, .nav-right a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            padding: 8px 0;
+        }
+        
+        .nav-left a:hover {
+            color: #f84464;
+        }
+        
+        .nav-right a {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        
+        .banner-section {
+            background: #fff;
+            padding: 12px 0 24px;
+        }
+        
+        .banner-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .banner-img {
+            width: 100%;
+            border-radius: 6px;
+            display: block;
+        }
+        
+        
+        .movies-section {
+            background: #f5f5f5;
+            padding: 32px 0;
+        }
+        
+        .movies-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .see-all {
+            color: #dc3558;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        .movie-list {
+            display: flex;
+            gap: 32px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        
+        .movie-list::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .movie-card {
+            min-width: 222px;
+        }
+        
+        .poster-wrapper {
+            position: relative;
+            width: 222px;
+            height: 333px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        
+        .poster-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .promoted-tag {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            background: #f84464;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 500;
+            padding: 2px 6px;
+            border-radius: 0 2px 2px 0;
+        }
+        
+        .movie-name {
+            font-size: 18px;
+            font-weight: 500;
+            color: #222;
+            margin-bottom: 4px;
+        }
+        
+        .movie-genre {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .search-box { display: none; }
+            .nav-left { overflow-x: auto; }
+            .nav-right { display: none; }
+            .movie-list { gap: 16px; }
+            .movie-card { min-width: 140px; }
+            .poster-wrapper { width: 140px; height: 210px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="header-container">
+            <div class="left-section">
+                <div class="logo">book<span>my</span>show</div>
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    <input type="text" placeholder="Search for Movies, Events, Plays, Sports and Activities">
+                </div>
+            </div>
+            <div class="right-section">
+                <div class="city-dropdown">
+                    Hyderabad
+                    <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                </div>
+                <button class="sign-in-btn">Sign in</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Second Nav -->
+    <div class="second-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#">Movies</a>
+                <a href="#">Stream</a>
+                <a href="#">Events</a>
+                <a href="#">Plays</a>
+                <a href="#">Sports</a>
+                <a href="#">Activities</a>
+                <a href="#">TATA IPL 2026</a>
+            </div>
+            <div class="nav-right">
+                <a href="#">ListYourShow</a>
+                <a href="#">Corporates</a>
+                <a href="#">Offers</a>
+                <a href="#">Gift Cards</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Banner -->
+    <div class="banner-section">
+        <div class="banner-container">
+            <img class="banner-img" src="https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-og-tour-india-with-thaman-live-in-hyderabad-0-2026-5-20-t-8-4-53.jpg" alt="Tara Rum Pum Banner">
+        </div>
+    </div>
+    
+    
+    <div class="movies-section">
+        <div class="movies-container">
+            <div class="section-header">
+                <h2 class="section-title">Recommended Movies</h2>
+                <a href="#" class="see-all">See All ›</a>
+            </div>
+            <div class="movie-list">
+                <div class="movie-card">
+                    <div class="poster-wrapper">
+                       
+                        <img class="poster-img" src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/chand-mera-dil-et00484700-1778492742.jpg" alt="chand mere dil">
+                    </div>
+                    <div class="movie-name">Chand mere dil</div>
+                    <div class="movie-genre">Action/Drama</div>
+                </div>
+                <div class="movie-card">
+                    <div class="poster-wrapper">
+                        
+                        <img class="poster-img" src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC,e-usm-2-2-0.5-0.008:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC41LzEwICA0OS43SysgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00487295-eazqztcqeg-portrait.jpg" alt="drushyam 3">
+                    </div>
+                    <div class="movie-name">Dhrushyam 3</div>
+                    <div class="movie-genre">Thriller</div>
+                </div>
+                <div class="movie-card">
+                    <div class="poster-wrapper">
+                        <img class="poster-img" src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC,e-usm-2-2-0.5-0.008:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MzAuM0srIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00455003-lsyvrbnrtu-portrait.jpg" alt="karupu">
+                    </div>
+                    <div class="movie-name">Karupu</div>
+                    <div class="movie-genre">Action and mythological movie</div>
+                </div>
+                <div class="movie-card">
+                    <div class="poster-wrapper">
+                        <img class="poster-img" src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC,e-usm-2-2-0.5-0.008:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS4xLzEwICAyM0srIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00495498-smtwedfzhm-portrait.jpg" alt="Krishnavatharam">
+                    </div>
+                    <div class="movie-name">Krishnavatharam</div>
+                    <div class="movie-genre">Devotional movie</div>
+                </div>
+                <div class="movie-card">
+                    <div class="poster-wrapper">
+                        <img class="poster-img" src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC,e-usm-2-2-0.5-0.008:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS4zLzEwICA4My42SysgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00470110-awdekyqwkw-portrait.jpg" alt="micheal">
+                    </div>
+                    <div class="movie-name">Micheal</div>
+                    <div class="movie-genre">Biography and musical</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+</body>
+</html>
